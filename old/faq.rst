@@ -2,6 +2,12 @@ Frequently Asked Questions
 ==========================
 
 
+What is Electron Cash?
+----------------------
+
+Electron Cash is a light wallet client for Bitcoin Cash. 
+
+
 How does Electron Cash work?
 ----------------------------
 
@@ -10,12 +16,14 @@ simplifying Bitcoin Cash. Startup times are instant because it
 operates in conjunction with high-performance servers that
 handle the most complicated parts of the Bitcoin Cash system.
 
+
 Does Electron Cash trust servers?
 ---------------------------------
 
 Not really; the Electron Cash client never sends private keys
 to the servers. In addition, it verifies the information
-reported by servers, using a technique called :ref:`Simple Payment Verification <spv>`
+reported by servers, using a technique called :ref:`Simplified Payment Verification <spv>`
+
 
 What is the Seed?
 -----------------
@@ -29,8 +37,10 @@ Example:
 
    constant forest adore false green weave stop guy fur freeze giggle clock
 
-Your wallet can be entirely recovered from its seed. For this, select
+Your wallet can be entirely recovered from its seed, so your seed phrase should be 
+written down and stored in a safe place. To restore your wallet from the seed, select
 the "restore wallet" option in the startup.
+
 
 How secure is the seed?
 -----------------------
@@ -54,30 +64,24 @@ phrase on paper.
 My transaction has been unconfirmed for a long time. What can I do?
 -------------------------------------------------------------------
 
-Bitcoin Cash transactions become 'confirmed' when miners accept to write
-them in the Bitcoin Cash blockchain. In general, the speed of confirmation
-depends on the fee you attach to your transaction; miners prioritize
-transaction that pay the highest fees.
+Bitcoin Cash transactions become 'confirmed' when miners include them in a
+new block on the Bitcoin Cash blockchain. The speed at which transactions 
+are confirmed depends on two things: random variance in the time between 
+blocks, and the fee that you attach to your transaction. 
 
-Recent versions of Electron Cash use 'dynamic fees', in order to make sure
-that the fee you pay with your transaction is adequate. This feature
-is enabled by default in recent versions of Electron Cash.
+Whilst blocks are found on average every 10 minutes, they are also quite 
+often found more and less frequently. If some time has passed and you're 
+still waiting for your transaction to be confirmed, the first thing to check 
+is whether a block has been found. You can do this using your favorite 
+block explorer. If you find that random variance is the cause for the delay, 
+just wait, it shouldn't be too much longer.
 
-If you have made a transaction that is unconfirmed, you can:
-
- - Wait for a long time. Eventually, your transaction will either be
-   confirmed or cancelled. This might take several days.
-
- - Increase the transaction fee. This is only possible for
-   'replaceable' transactions. To create this type of transaction, you
-   must have enabled 'Replace by Fee' in your preferences, before
-   sending the transaction.
-
- - Create a 'Child Pays For Parent' transaction. A CPFP is a new
-   transaction, that pays a high fee in order to compensate for the
-   small fee of its parent transaction. It can be done by the
-   recipient of the funds, or by the sender, if the transaction has a
-   change output.
+Because the Bitcoin Cash network has plenty of headroom, the blocks are
+rarely congested. This means that fees stay consistently low. By default, 
+Electron Cash will recommend a network fee of 1 satoshi per byte, which 
+will usually be sufficient for inclusion in the next block. Whilst the fee rate 
+can  be customised, it should not be set any lower than 1 sat/byte, and 
+transactions paying less than 1 sat/byte will usually be rejected by the network.
 
 
 What does it mean to "Freeze" an address in Electron Cash?
@@ -86,6 +90,11 @@ What does it mean to "Freeze" an address in Electron Cash?
 When you freeze an address, the funds in that address will not be used
 for sending Bitcoin Cash. You can not send Bitcoin Cash if you don't have
 enough funds in the non-frozen addresses.
+
+Additionally, Electron Cash may freeze a previously used address to increase 
+privacy. This is often done in conjunction with using CashShuffle. Address reuse 
+will damage your privacy by linking the various addresses in your wallet. 
+Freezing used addresses prevents this.
           
 
 How is the wallet encrypted?
@@ -119,12 +128,17 @@ Yes. see :ref:`Cold Storage <coldstorage>`
 Can I import private keys from other Bitcoin Cash clients?
 ----------------------------------------------------------
 
-In Electron Cash, you cannot import private keys in a wallet that has a
-seed. You should sweep them instead.
+You have two options when wanting to import private keys from other 
+Bitcoin Cash clients. 
 
-If you want to import private keys and not sweep them you need to
-create a special wallet that does not have a seed.  For this, create a
-new wallet, select "restore", and instead of typing your seed, type a
+1. If you would like to recover funds held with private keys, the 
+best practice is to sweep the addresses associated with these private 
+keys to one of your Electron Cash wallets. Click here for more information on sweeping.
+
+2. If you would like to import the private keys rather than sweep them, 
+then you need to create a new wallet. This will need to be a special 
+wallet that does not have a seed. To do this, create a new wallet, 
+select "restore", and instead of typing your seed, type a
 list of private keys, or a list of addresses if you want to create a
 watching-only wallet.
 
@@ -132,16 +146,16 @@ watching-only wallet.
 .. image:: png/import_addresses.png
 
 
-You will need to back up this wallet, because it cannot be
+You will need to create a backup of this wallet, because it cannot be
 recovered from seed.
+
 
 Can I sweep private keys from other Bitcoin Cash clients?
 ---------------------------------------------------------
 
-
-Sweeping private keys means to send all the Bitcoin Cash they control to
-an existing address in your wallet. The private keys you sweep do not
-become a part of your wallet.  Instead, all the Bitcoin Cash they control
+Sweeping private keys means sending all of the Bitcoin Cash that they control to
+an existing address in your wallet. The private keys that you sweep do not
+become a part of your wallet. Instead, all the Bitcoin Cash that they control
 are sent to an address that has been deterministically generated from
 your wallet seed.
 
