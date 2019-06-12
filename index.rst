@@ -6,7 +6,7 @@
 Welcome to the Electron Cash documentation!
 ===========================================
 
-**SECURITY ALERT: Electron Cash version 3.1.2 has been released. A JSONRPC security hole was discovered that affects all Electrum forks. This has been fully patched in Electron Cash 3.1.2. If you were running a prior version as an online wallet without a strong password, you should consider the wallet compromised and create a fresh wallet with version 3.1.2 or better.**
+**SECURITY ALERT: A JSONRPC security hole was discovered in January 2018 that affects all Electrum forks. This was fully patched in Electron Cash 3.1.2. If you were running a prior version as an online wallet without a strong password, you should consider the wallet compromised, and create a fresh wallet with the latest version of Electron Cash.**
 
 Electron Cash is a lightweight Bitcoin Cash wallet.
 
@@ -14,8 +14,9 @@ Current versions are:
 
 - Windows, Mac, and Linux - 4.0.6
 - Android - 3.3.5
+- iOS - 4.0.7
 
-Electron Cash can be downloaded from https://electroncash.org/ or the `PlayStore <https://play.google.com/store/apps/details?id=org.electroncash.electroncash3>`_. These are the *only* authentic sources.
+Electron Cash can be downloaded from https://electroncash.org/, the `PlayStore <https://play.google.com/store/apps/details?id=org.electroncash.electroncash3>`_ or the `App Store <https://itunes.apple.com/us/app/electron-cash/id1359700089?ls=1&mt=8>`_. These are the *only* authentic sources.
 
 Getting Started
 ---------------
