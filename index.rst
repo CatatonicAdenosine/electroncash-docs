@@ -16,7 +16,7 @@ Current versions are:
 - Android - 3.3.5
 - iOS - 4.0.7
 
-Electron Cash can be downloaded from https://electroncash.org/, the `PlayStore <https://play.google.com/store/apps/details?id=org.electroncash.electroncash3>`_ or the `App Store <https://itunes.apple.com/us/app/electron-cash/id1359700089?ls=1&mt=8>`_. These are the *only* authentic sources.
+Electron Cash can be downloaded from https://electroncash.org/, the `PlayStore <https://play.google.com/store/apps/details?id=org.electroncash.wallet>`_ or the `App Store <https://itunes.apple.com/us/app/electron-cash/id1359700089?ls=1&mt=8>`_. These are the *only* authentic sources.
 
 Getting Started
 ---------------
