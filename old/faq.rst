@@ -7,7 +7,7 @@ What is Electron Cash?
 
 Electron Cash is a light wallet client for Bitcoin Cash, 
 available on desktop and mobile platforms. It uses 
-Simplified Payment Verification (SPV), first 
+:ref:`Simplified Payment Verification <spv>` (SPV), first 
 described by Satoshi Nakamoto in the Bitcoin white paper, 
 to interact with the Bitcoin Cash blockchain without needing 
 to download the blockchain or run a full node. With Electron 
@@ -28,7 +28,7 @@ How does Electron Cash work?
 Electron Cash's focus is speed and low resource usage. Startup times 
 are instant because it operates in conjunction with high-performance 
 servers that handle the most complicated parts of the Bitcoin Cash system.
-Simplified Payment Verification is used to cryptographically verify that 
+:ref:`Simplified Payment Verification <spv>` is used to cryptographically verify that 
 a transaction has been included in the blockchain.
 
 
