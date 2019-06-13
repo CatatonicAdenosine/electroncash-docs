@@ -12,7 +12,7 @@ described by Satoshi Nakamoto in the Bitcoin white paper,
 to interact with the Bitcoin Cash blockchain without needing 
 to download the blockchain or run a full node. With Electron 
 Cash, users can hold their own private keys and securely sign 
-and vaalidate transactions locally. 
+and validate transactions locally. 
 
 Unlike many other light wallets, however, Electron Cash also 
 provides advanced wallet functionality. This varies across 
@@ -28,6 +28,8 @@ How does Electron Cash work?
 Electron Cash's focus is speed and low resource usage. Startup times 
 are instant because it operates in conjunction with high-performance 
 servers that handle the most complicated parts of the Bitcoin Cash system.
+Simplified Payment Verification is used to cryptographically verify that 
+a transaction has been included in the blockchain.
 
 
 Does Electron Cash trust servers?
@@ -100,9 +102,9 @@ You can do this by using your favorite block explorer to check whether a
 block has been found since you broadcast your transaction. If random variance 
 is the cause for the delay, just wait, it shouldn't be too much longer.
 
-The other factor that impacts confirmation time is the transaction fee. 
+The other factor that can impact confirmation time is the transaction fee. 
 However, because the Bitcoin Cash network has plenty of capacity and blocks are
-rarely congested, fees on Bitcoin Cash are consistent and low. This means that 
+rarely congested, fees on Bitcoin Cash are low and consistent. This means that 
 you do not need to guess ahead of time what fee will be required for a fast 
 confirmation. By default, Electron Cash will recommend a network fee of 1 satoshi 
 per byte, which will usually be sufficient for inclusion in the next block. 
@@ -129,19 +131,19 @@ How is the wallet encrypted?
 
 Electron Cash uses two separate levels of encryption:
 
- - Your seed and private keys are encrypted using AES-256-CBC. The
-   private keys are decrypted only briefly, when you need to sign a
-   transaction, and this requires entering your password. This 
-   minimizes the amount of time during which sensitive
-   information is unencrypted in your computer's memory.
+- Your seed and private keys are encrypted using AES-256-CBC. The
+  private keys are decrypted only briefly, when you need to sign a
+  transaction, and this requires entering your password. This 
+  minimizes the amount of time during which sensitive
+  information is unencrypted in your computer's memory.
 
- - In addition, your wallet file may be encrypted on disk. Note that
-   the wallet information will remain unencrypted in the memory of
-   your computer for the duration of your session. If a wallet is
-   encrypted, then its password will be required in order to open
-   it. Note that the password will not be kept in memory. Electron Cash
-   does not need it in order to save the wallet on disk, because it
-   uses asymmetric encryption (ECIES).
+- In addition, your wallet file may be encrypted on disk. Note that
+  the wallet information will remain unencrypted in the memory of
+  your computer for the duration of your session. If a wallet is
+  encrypted, then its password will be required in order to open
+  it. Note that the password will not be kept in memory. Electron Cash
+  does not need it in order to save the wallet on disk, because it
+  uses asymmetric encryption (ECIES).
 
 Wallet file encryption is activated by default since version 2.8.
 
@@ -155,20 +157,20 @@ Yes. see :ref:`Cold Storage <coldstorage>`
 Can I import private keys from other Bitcoin Cash clients?
 ----------------------------------------------------------
 
-You have two options when wanting to import private keys from other 
+Yes. You have two options when wanting to import private keys from other 
 Bitcoin Cash clients. 
 
-First, if you would like to recover funds held with private keys, the 
-best practice is to sweep the Bitcoin Cash held by these private keys 
-to an addresses in one of your Electron Cash wallets.
+- If you would like to recover funds held with private keys, the 
+  best practice is to sweep the Bitcoin Cash held by these private keys 
+  to an addresses in one of your Electron Cash wallets.
 
-Second, if you would like to import the private keys rather than sweep them, 
-then you can do so by creating a new wallet. This will need to be a special 
-wallet that does not have a seed. To do this, create a new wallet, 
-select "restore", but instead of typing your seed, type a list of 
-private keys. Alternatively, you can also type a list of addresses if you 
-want to create a watching-only wallet. You will need to create a backup of 
-this wallet, because it cannot be recovered from seed.
+- However, if you would like to import the private keys rather than sweep them, 
+  then you can do so by creating a new wallet. This will need to be a special 
+  wallet that does not have a seed. To do this, create a new wallet, 
+  select "restore", but instead of typing your seed, type a list of 
+  private keys. Alternatively, you can also type a list of addresses if you 
+  want to create a watching-only wallet. You will need to create a backup of 
+  this wallet, because it cannot be recovered from seed.
 
 
 .. image:: png/import_addresses.png
@@ -195,8 +197,8 @@ you first run the application and located under the /wallets folder.
 
 On Windows:
 
- - Show hidden files
- - Go to \\Users\\YourUserName\\AppData\\Roaming\\Electron Cash\\wallets (or %APPDATA%\\Electrum\\wallets)
+- Show hidden files
+- Go to \\Users\\YourUserName\\AppData\\Roaming\\Electron Cash\\wallets (or %APPDATA%\\Electrum\\wallets)
 
 On Mac:
 
